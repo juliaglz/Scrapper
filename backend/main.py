@@ -85,6 +85,9 @@ def generate_scraper_code(url: str, instruction: str) -> str:
     result = response.json()
     code_raw = result["choices"][0]["message"]["content"]
     return clean_code(code_raw)
+@app.get("/")
+def health():
+    return {"status": "ok"}
 
 @app.post("/scrape", response_model=ScrapeResponse)
 def scrape(request: ScrapeRequest):
