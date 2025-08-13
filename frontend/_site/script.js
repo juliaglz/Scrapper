@@ -8,7 +8,7 @@ document.getElementById("scrape-form").addEventListener("submit", async (e) => {
   document.getElementById("output-code").textContent = "⏳ Waiting for code...";
 
   try {
-    const res = await fetch("http://localhost:8000/scrape", {
+    const res = await fetch("https://scrapper-nq37.onrender.com/scrape", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url, instruction })
