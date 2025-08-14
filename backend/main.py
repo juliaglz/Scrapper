@@ -88,6 +88,9 @@ def generate_scraper_code(url: str, instruction: str) -> str:
 @app.get("/")
 def health():
     return {"status": "ok"}
+@app.options("/")
+async def root_options():
+    return {}
 
 @app.post("/", response_model=ScrapeResponse)
 def scrape(request: ScrapeRequest):
