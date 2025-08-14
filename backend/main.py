@@ -5,6 +5,7 @@ import json
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 import uvicorn
 import requests
 from dotenv import load_dotenv
@@ -88,9 +89,17 @@ def generate_scraper_code(url: str, instruction: str) -> str:
 @app.get("/")
 def health():
     return {"status": "ok"}
+
 @app.options("/scrape")
-async def root_options():
-    return {}
+async def scrape_options():
+    return JSONResponse(
+        content={},
+        headers={
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "POST, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type",
+        },
+    )
 
 @app.post("/scrape", response_model=ScrapeResponse)
 def scrape(request: ScrapeRequest):
