@@ -89,7 +89,7 @@ def generate_scraper_code(url: str, instruction: str) -> str:
 def health():
     return {"status": "ok"}
 
-@app.post("/scrape", response_model=ScrapeResponse)
+@app.post("/scrape/", response_model=ScrapeResponse)
 def scrape(request: ScrapeRequest):
     try:
         code = generate_scraper_code(request.url, request.instruction)
