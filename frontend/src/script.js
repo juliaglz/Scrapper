@@ -1,3 +1,5 @@
+const BACKEND_URL = "https://scrapper-nq37.onrender.com/";
+
 document.getElementById("scrape-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -8,11 +10,12 @@ document.getElementById("scrape-form").addEventListener("submit", async (e) => {
   document.getElementById("output-code").textContent = "⏳ Waiting for code...";
 
   try {
-    const res = await fetch("http://localhost:8000/scrape", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url, instruction })
-    });
+        const res = await fetch(`${BACKEND_URL}/scrape`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url, instruction })
+        });
+
 
     if (!res.ok) throw new Error(`Server error: ${res.status}`);
 
