@@ -1,4 +1,4 @@
-const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:8000";
+const BACKEND_URL = "https://scrapper-nq37.onrender.com/";
 
 document.getElementById("scrape-form").addEventListener("submit", async (e) => {
   e.preventDefault();
