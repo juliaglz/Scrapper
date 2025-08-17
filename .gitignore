@@ -9,4 +9,4 @@ __pycache__/
 *.pyo
 
 # Environment variables
-.env
+backend/.env
