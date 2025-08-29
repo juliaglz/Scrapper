@@ -7,4 +7,5 @@ pydantic
 uvicorn
 beautifulsoup4
 python-multipart
+playwright
 
