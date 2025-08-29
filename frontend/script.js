@@ -1,4 +1,4 @@
-const BACKEND_URL = "http://127.0.0.1:8000"; // tu backend local
+const BACKEND_URL = "https://scrapper-nq37.onrender.com";
 const recordBtn = document.getElementById("record-btn");
 const instructionInput = document.getElementById("instruction");
 
