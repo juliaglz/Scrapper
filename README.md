@@ -6,7 +6,7 @@ This project allows you to scrape data from websites using a combination of AI a
 
 The frontend is deployed on Netlify and communicates with the backend hosted on Render:
 
-[Try the app]([https://julscrapper.netlify.app/])
+[Try it here](https://julscrapper.netlify.app/)
 
 > Note: The project works best with static websites. Support for dynamic JavaScript-heavy websites is under development.
 
